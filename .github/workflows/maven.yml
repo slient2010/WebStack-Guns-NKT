@@ -25,4 +25,4 @@ jobs:
       run: mvn -B package --file pom.xml
     
     - name: Display structure of downloaded files
-      run: ls -R
+      run: ls -al target/
