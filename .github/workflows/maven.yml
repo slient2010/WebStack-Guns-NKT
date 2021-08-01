@@ -25,4 +25,13 @@ jobs:
       run: mvn -B package --file pom.xml
     
     - name: Display structure of downloaded files
-      run: ls -al target/
+      run: ls -al target/Webstack-Guns-nkt-1.0.jar
+
+    - name: 'Tar files'
+      run: tar -cvf my_files.tar.gz target/Webstack-Guns-nkt-1.0.jar
+
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: my_files.tar.gz  
